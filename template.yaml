@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: some description
+
+Resources:
+  ## Hello world lambda
+  HelloWorldLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: HelloWorldLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.HelloWorld::handler
+      CodeUri: target/lambda.jar
+  ## Lambda with timeout
+  TimeoutLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: TimeoutLambda
+      Timeout: 2 # 2s
+      Runtime: java11
+      MemorySize: 512 # Mb
+      Handler: org.example.lambda.TimeoutLambda::handler
+      CodeUri: target/lambda.jar

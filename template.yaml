@@ -3,15 +3,25 @@ Transform: AWS::Serverless-2016-10-31
 Description: some description
 
 Resources:
-  ## Hello world lambda
-  HelloWorldLambda:
+  ## Async Hello world lambda
+  AsyncHelloWorldLambda:
     Type: AWS::Serverless::Function
     Properties:
       Runtime: java11
-      FunctionName: HelloWorldLambda
+      FunctionName: AsyncHelloWorldLambda
       MemorySize: 512
       ## This path to lambda to invoke
-      Handler: org.example.lambda.HelloWorld::handler
+      Handler: org.example.lambda.AsyncHelloWorldLambda::handler
+      CodeUri: target/lambda.jar
+  ## Async Hello world lambda
+  RequestResponseHelloWorldLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponseHelloWorldLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.RequestResponseHelloWorldLambda::handler
       CodeUri: target/lambda.jar
   ## Lambda with timeout
   TimeoutLambda:

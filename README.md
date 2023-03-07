@@ -26,6 +26,12 @@ aws s3 mb s3://some_unique_name
 --capabilities CAPABILITY_IAM
 ```
 
+# To invoke
+
+## Via AWS CLI
+
+[See this](https://github.com/antonovdmitriy/it-notes/blob/master/aws/AWS.md#invoke-lambda-via-aws-cli)
+
 # To clear
 
 ```bash

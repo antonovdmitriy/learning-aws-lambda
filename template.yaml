@@ -13,7 +13,7 @@ Resources:
       ## This path to lambda to invoke
       Handler: org.example.lambda.AsyncHelloWorldLambda::handler
       CodeUri: target/lambda.jar
-  ## Async Hello world lambda
+  ## Sync Hello world lambda
   RequestResponseHelloWorldLambda:
     Type: AWS::Serverless::Function
     Properties:
@@ -22,6 +22,36 @@ Resources:
       MemorySize: 512
       ## This path to lambda to invoke
       Handler: org.example.lambda.RequestResponseHelloWorldLambda::handler
+      CodeUri: target/lambda.jar
+  ## Sync lambda with boolean primitives
+  RequestResponseBooleanLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponseBooleanLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.RequestResponsePrimitivesLambda::handlerBoolean
+      CodeUri: target/lambda.jar
+  ## Sync lambda with int primitives
+  RequestResponseIntLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponseIntLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.RequestResponsePrimitivesLambda::handlerInt
+      CodeUri: target/lambda.jar
+  ## Sync lambda with Integer
+  RequestResponseIntegerLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponseIntegerLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.RequestResponsePrimitivesLambda::handlerInteger
       CodeUri: target/lambda.jar
   ## Lambda with timeout
   TimeoutLambda:

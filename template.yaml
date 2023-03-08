@@ -53,6 +53,33 @@ Resources:
       ## This path to lambda to invoke
       Handler: org.example.lambda.RequestResponsePrimitivesLambda::handlerInteger
       CodeUri: target/lambda.jar
+  RequestResponseListLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponseListLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.ListMapLambda::handlerList
+      CodeUri: target/lambda.jar
+  RequestResponseMapLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponseMapLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.ListMapLambda::handlerMap
+      CodeUri: target/lambda.jar
+  RequestResponseListOfMapsLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponseListOfMapsLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.lambda.ListMapLambda::handlerNestedCollection
+      CodeUri: target/lambda.jar
   ## Lambda with timeout
   TimeoutLambda:
     Type: AWS::Serverless::Function

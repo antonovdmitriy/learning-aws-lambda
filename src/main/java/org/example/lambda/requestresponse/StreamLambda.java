@@ -1,4 +1,4 @@
-package org.example.lambda;
+package org.example.lambda.requestresponse;
 
 import java.io.IOException;
 import java.io.InputStream;

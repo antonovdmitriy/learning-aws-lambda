@@ -1,6 +1,6 @@
-package org.example.lambda;
+package org.example.lambda.requestresponse;
 
-public class RequestResponsePrimitivesLambda {
+public class PrimitivesLambda {
 
     /**
      * to test use true or "true"

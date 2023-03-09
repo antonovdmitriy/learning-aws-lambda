@@ -1,4 +1,4 @@
-package org.example.lambda;
+package org.example.lambda.async;
 
 import com.amazonaws.services.lambda.runtime.Context;
 

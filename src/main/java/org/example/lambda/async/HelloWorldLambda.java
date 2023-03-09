@@ -1,6 +1,6 @@
-package org.example.lambda;
+package org.example.lambda.async;
 
-public class AsyncHelloWorldLambda {
+public class HelloWorldLambda {
 
     /**
      * to test use some string i.e "ALLA"

@@ -80,6 +80,15 @@ Resources:
       ## This path to lambda to invoke
       Handler: org.example.lambda.ListMapLambda::handlerNestedCollection
       CodeUri: target/lambda.jar
+  RequestResponsePojoLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java11
+      FunctionName: RequestResponsePojoLambda
+      MemorySize: 512
+      ## This path to lambda to invoke
+      Handler: org.example.pojolambda.PojoLambda::handlerPojo
+      CodeUri: target/lambda.jar
   ## Lambda with timeout
   TimeoutLambda:
     Type: AWS::Serverless::Function

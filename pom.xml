@@ -18,6 +18,14 @@
         <finalName>lambda</finalName>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/antonovdmitriy/LearningAWSLambdas</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>com.amazonaws</groupId>

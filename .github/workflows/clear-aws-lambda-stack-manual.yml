@@ -6,10 +6,6 @@ name: Clear aws labmda stack
 on:
   workflow_dispatch:
     inputs:
-#      hostname:
-#        description: 's3 bucket to clear'
-#        required: true
-#        default: 'tests465465465465'
       stack-name:
         description: 'stack name to clear'
         required: true
@@ -23,9 +19,9 @@ jobs:
       packages: write
 
     steps:
-    - uses: aws-actions/setup-sam@v2
-      with:
-        use-installer: true
+#    - uses: aws-actions/setup-sam@v2
+#      with:
+#        use-installer: true
     - uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}

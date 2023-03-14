@@ -10,7 +10,7 @@ mvn clean package
 
 # To deploy
 
-## Via SAM
+## With SAM
 - How to install AWS CLI [see](https://github.com/antonovdmitriy/it-notes/blob/master/aws/AWS.md#aws-sam-cli)
 - How to install SAM  [see](https://github.com/antonovdmitriy/it-notes/blob/master/aws/AWS.md#aws-sam-cli)
 - create s3 bucket to deploy code 
@@ -25,6 +25,10 @@ aws s3 mb s3://some_unique_name
 --stack-name stack-name \
 --capabilities CAPABILITY_IAM
 ```
+
+## With Github actions
+
+[see this](.github/workflows/build-and-deploy-to-aws.yml)
 
 # To invoke
 

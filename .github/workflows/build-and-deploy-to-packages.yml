@@ -1,7 +1,7 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
 
-name: build and deploy to AWS
+name: build and deploy to packages
 
 on:
   release:
@@ -27,12 +27,8 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
     - name: Build with Maven
       run: mvn -B install --file pom.xml
-    - uses: aws-actions/setup-sam@v2
-      with:
-        use-installer: true
-    - uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-north-1
-    - run: sam deploy --s3-bucket tests465465465465 --stack-name some-name --capabilities CAPABILITY_IAM --no-confirm-changeset --no-fail-on-empty-changeset
+    - name: Publish package
+      env:
+        GITHUB_USERNAME: x-access-token
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mvn --settings settings.xml deploy
